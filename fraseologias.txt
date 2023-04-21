@@ -1,0 +1,13 @@
+marial = {
+    MaterialApp : {
+        theme: ThemeData 
+        home:
+    }
+}
+
+floatingActionButton = {
+    FloatingActionButton {
+        onPressed: function...
+    }
+    icon = IconData
+}
