@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando/app_controller.dart';
+import 'custom_switch.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,17 +24,46 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Flutterando'),
         actions: const [
-         CustomSwitch(), 
+          CustomSwitch(),
         ],
       ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          scrollDirection: Axis.vertical,
+
           children: [
             Text('Contador: $contador'),
-           const CustomSwitch(),
+            Container(
+              height: 10,
+            ),
+            const CustomSwitch(),
+            Container(
+              height: 20,
+            ),
+   
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.black,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.black,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.black,
+                ),
+              ],
+            )
           ],
         ),
       ),
@@ -60,32 +89,5 @@ class _HomePageState extends State<HomePage> {
         child: const Icon(Icons.add),
       ),
     );
-  }
-}
-
-class CustomSwitch extends StatelessWidget {
-  const CustomSwitch({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Switch(
-      value: AppController.instance.isDartTheme,
-      onChanged: (value) {
-        AppController.instance.changeTheme(value);
-        print('Value: $value');
-        print('isDartTheme: ${AppController.instance.isDartTheme}');
-      },
-      // value: isDartTheme,
-      // onChanged: (value) {
-      //   setState(() {
-      //     isDartTheme = value;
-      //   });
-      // },
-    ),
-    Text('${AppController.instance.isDartTheme}')
-      ] 
-    ); 
   }
 }
