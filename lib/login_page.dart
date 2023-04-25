@@ -50,7 +50,9 @@ class _LoginPageState extends State<LoginPage> {
               ElevatedButton(
                 onPressed: () {
                   if(email == 'iago@flutter.com.br' && password == '123') {
-                   print('Logou com sucesso');
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const HomePage())
+                    );                   
                   } else {
                     print('Algo deu errado');
                   }
