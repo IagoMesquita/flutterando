@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterando/app_controller.dart';
-import 'package:flutterando/home_page.dart';
+// import 'package:flutterando/home_page.dart';
+import 'package:flutterando/login_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -18,7 +19,7 @@ class AppWidget extends StatelessWidget {
                 : Brightness.light,
           ),
           debugShowCheckedModeBanner: false,
-          home: const HomePage(),
+          home: const LoginPage(),
         );
       }, 
     );
